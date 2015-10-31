@@ -31,7 +31,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         updateLabels()
-        // Do any additional setup after loading the view, typically from a nib.
+        configureGetButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,8 +51,15 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             showLocationServicesDeniedAlert()
             return
         }
-        startLocationManager()
+        if updatingLocation {
+            stopLocationManager()
+        } else {
+            location = nil
+            lastLocationError = nil
+            startLocationManager()
+        }
         updateLabels()
+        configureGetButton()
 
     }
 
@@ -65,14 +72,31 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         lastLocationError = error
         stopLocationManager()
         updateLabels()
+        configureGetButton()
     }
 
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let newLocation = locations.last!
         print("didUpdateLocations \(newLocation)")
-        lastLocationError = nil
-        location = newLocation
-        updateLabels()
+
+        if newLocation.timestamp.timeIntervalSinceNow < -5 {
+            return
+        }
+        if newLocation.horizontalAccuracy < 0 {
+            return
+        }
+        if location == nil || location!.horizontalAccuracy > newLocation.horizontalAccuracy {
+            lastLocationError = nil
+            location = newLocation
+            updateLabels()
+
+            if newLocation.horizontalAccuracy <= locationManager.desiredAccuracy {
+                print("*** We're done!")
+                stopLocationManager()
+                configureGetButton()
+            }
+
+        }
     }
 
     // MARK: Helper
@@ -108,6 +132,14 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
                 statusMessage = "Tap 'Get My Location' to Start"
             }
             messageLabel.text = statusMessage
+        }
+    }
+
+    func configureGetButton() {
+        if updatingLocation {
+            getButton.setTitle("Stop", forState: .Normal)
+        } else {
+            getButton.setTitle("Get My Location", forState: .Normal)
         }
     }
 
