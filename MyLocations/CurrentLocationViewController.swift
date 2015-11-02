@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  CurrentLocationViewController.swift
 //  MyLocations
 //
 //  Created by Patrick Schneider on 26/10/15.
