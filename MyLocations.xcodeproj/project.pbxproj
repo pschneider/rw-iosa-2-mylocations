@@ -13,6 +13,7 @@
 		CD91F8A71BDD9B0500B850A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD91F8A51BDD9B0500B850A6 /* Main.storyboard */; };
 		CD91F8A91BDD9B0500B850A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD91F8A81BDD9B0500B850A6 /* Assets.xcassets */; };
 		CD91F8AC1BDD9B0500B850A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD91F8AA1BDD9B0500B850A6 /* LaunchScreen.storyboard */; };
+		CD9933AB1BF02A1300855A17 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9933AA1BF02A1300855A17 /* LocationDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CD91F8A81BDD9B0500B850A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD91F8AB1BDD9B0500B850A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD91F8AD1BDD9B0500B850A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD9933AA1BF02A1300855A17 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				CD91F89F1BDD9B0500B850A6 /* AppDelegate.swift */,
 				CD91F8A11BDD9B0500B850A6 /* CurrentLocationViewController.swift */,
+				CD9933AA1BF02A1300855A17 /* LocationDetailsViewController.swift */,
 				CD91F8A31BDD9B0500B850A6 /* SecondViewController.swift */,
 				CD91F8A51BDD9B0500B850A6 /* Main.storyboard */,
 				CD91F8A81BDD9B0500B850A6 /* Assets.xcassets */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD9933AB1BF02A1300855A17 /* LocationDetailsViewController.swift in Sources */,
 				CD91F8A41BDD9B0500B850A6 /* SecondViewController.swift in Sources */,
 				CD91F8A01BDD9B0500B850A6 /* AppDelegate.swift in Sources */,
 				CD91F8A21BDD9B0500B850A6 /* CurrentLocationViewController.swift in Sources */,
@@ -288,6 +292,7 @@
 				CD91F8B21BDD9B0500B850A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

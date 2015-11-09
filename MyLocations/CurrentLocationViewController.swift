@@ -46,6 +46,15 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "TagLocation" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let controller = navigationController.topViewController as! LocationDetailsViewController
+            controller.coordinate = location!.coordinate
+            controller.placemark = placemark
+        }
+    }
+
     // MARK: Actions
     @IBAction func getLocation() {
         let authStatus = CLLocationManager.authorizationStatus()
@@ -169,6 +178,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         } else {
             latitudeLabel.text = ""
             longitudeLabel.text = ""
+            tagButton.hidden = true
 
             let statusMessage: String
             if let error = lastLocationError {
