@@ -31,6 +31,7 @@ class CategoryPickerViewController: UITableViewController {
         super.viewDidLoad()
         for i in 0..<categories.count {
             if categories[i] == selectedCategoryName {
+                // check which index path (row) our selected category is to preselect it on open
                 selectedIndexPath = NSIndexPath(forRow: i, inSection: 0)
                 break
             }
