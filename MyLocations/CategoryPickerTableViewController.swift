@@ -11,6 +11,7 @@ import UIKit
 class CategoryPickerViewController: UITableViewController {
     // MARK: Properties
     var selectedCategoryName = ""
+    // Model
     let categories = [
         "No Category",
         "Apple Store",
