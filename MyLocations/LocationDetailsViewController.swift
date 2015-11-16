@@ -32,6 +32,7 @@ class LocationDetailsViewController: UITableViewController {
     var placemark: CLPlacemark?
     var categoryName = "No Category"
     var managedObjectContext: NSManagedObjectContext!
+    var date = NSDate()
 
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -49,7 +50,7 @@ class LocationDetailsViewController: UITableViewController {
             addressLabel.text = "No Address found"
         }
 
-        dateLabel.text = formatDate(NSDate())
+        dateLabel.text = formatDate(date)
 
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("hideKeyboard:"))
         gestureRecognizer.cancelsTouchesInView = true
@@ -112,6 +113,21 @@ class LocationDetailsViewController: UITableViewController {
     @IBAction func done(sender: AnyObject) {
         let hudView = HudView.hudInView(navigationController!.view, animated: true)
         hudView.text = "Tagged"
+
+        let location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: managedObjectContext) as! Location
+
+        location.locationDescription = descriptionTextView.text
+        location.category = categoryName
+        location.latitude = coordinate.latitude
+        location.longitude = coordinate.longitude
+        location.date = date
+        location.placemark = placemark
+
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("Error saving obj: \(error)")
+        }
 
         afterDelay(0.6) { self.dismissViewControllerAnimated(true, completion: nil) }
     }
