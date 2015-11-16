@@ -16,14 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: Core data
     lazy var managedObjectContext: NSManagedObjectContext = {
-        guard let modelURL = NSBundle.mainBundle().URLForResource("Datamodel", withExtension: "momd") else { fatalError("Could not find data model in app bundle") }
+        guard let modelURL = NSBundle.mainBundle().URLForResource("DataModel", withExtension: "momd") else { fatalError("Could not find data model in app bundle") }
 
         guard let model = NSManagedObjectModel(contentsOfURL: modelURL) else { fatalError("Error initializing model from \(modelURL)") }
 
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         let documentsDirectory = urls[0]
         let storeURL = documentsDirectory.URLByAppendingPathComponent("DataStore.sqlite")
-
         do {
             let coordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
             try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil)
