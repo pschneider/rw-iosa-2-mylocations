@@ -125,11 +125,11 @@ class LocationDetailsViewController: UITableViewController {
 
         do {
             try managedObjectContext.save()
+            afterDelay(0.6) { self.dismissViewControllerAnimated(true, completion: nil) }
         } catch {
-            fatalError("Error saving obj: \(error)")
+            fatalCoreDataError(error)
         }
 
-        afterDelay(0.6) { self.dismissViewControllerAnimated(true, completion: nil) }
     }
 
     @IBAction func cancel(sender: AnyObject) {
