@@ -95,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400" y="-303"/>
+            <point key="canvasLocation" x="572" y="-303"/>
         </scene>
         <!--Tag Location-->
         <scene sceneID="Glq-1R-fj3">
@@ -331,7 +331,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Luw-zN-pNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1130" y="-303"/>
+            <point key="canvasLocation" x="1574" y="85"/>
         </scene>
         <!--Category Picker View Controller-->
         <scene sceneID="fzd-Q1-i7n">
@@ -377,7 +377,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6lQ-eM-7PY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="XZH-33-xaV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1504" y="-303"/>
+            <point key="canvasLocation" x="1948" y="85"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -410,11 +410,11 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="57" id="q35-4q-g2r" customClass="LocationCell" customModule="MyLocations" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="57" id="q35-4q-g2r" customClass="LocationCell" customModule="MyLocations" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="320" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q35-4q-g2r" id="fcu-gv-HCg">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="56.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="56.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sDW-KS-I2D">
@@ -440,6 +440,7 @@
                                 <connections>
                                     <outlet property="addressLabel" destination="Qb3-ED-qdu" id="3N8-rX-0c4"/>
                                     <outlet property="descriptionLabel" destination="sDW-KS-I2D" id="ris-wI-uHo"/>
+                                    <segue destination="dSb-k1-gkf" kind="modal" identifier="EditLocation" id="MuD-n2-2UF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -477,6 +478,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dSb-k1-gkf" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Rob-Nz-qqI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="E5z-R1-4bH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -489,10 +491,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NKI-71-ZHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="764" y="-303"/>
+            <point key="canvasLocation" x="1208" y="85"/>
         </scene>
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="MuD-n2-2UF"/>
+    </inferredMetricsTieBreakers>
 </document>

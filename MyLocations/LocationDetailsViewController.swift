@@ -31,14 +31,30 @@ class LocationDetailsViewController: UITableViewController {
     var coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     var placemark: CLPlacemark?
     var categoryName = "No Category"
-    var managedObjectContext: NSManagedObjectContext!
     var date = NSDate()
+    var descriptionText = ""
+    var locationToEdit: Location? {
+        didSet {
+            if let location = locationToEdit {
+                descriptionText = location.locationDescription
+                categoryName = location.category
+                date = location.date
+                coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
+                placemark = location.placemark
+            }
+        }
+    }
+    var managedObjectContext: NSManagedObjectContext!
 
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        descriptionTextView.text = ""
+        if let location = locationToEdit {
+            title = "Edit Location"
+        }
+
+        descriptionTextView.text = descriptionText
         categoryLabel.text = categoryName
 
         latitudeLabel.text = String(format: "%.8f", coordinate.latitude)
@@ -57,6 +73,7 @@ class LocationDetailsViewController: UITableViewController {
         tableView.addGestureRecognizer(gestureRecognizer)
     }
 
+    // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "PickCategory" {
             let controller = segue.destinationViewController as! CategoryPickerViewController
@@ -112,9 +129,15 @@ class LocationDetailsViewController: UITableViewController {
     // MARK: Action
     @IBAction func done(sender: AnyObject) {
         let hudView = HudView.hudInView(navigationController!.view, animated: true)
-        hudView.text = "Tagged"
 
-        let location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: managedObjectContext) as! Location
+        let location: Location
+        if let temp = locationToEdit {
+            hudView.text = "Updated"
+            location = temp
+        } else {
+            hudView.text = "Tagged"
+            location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: managedObjectContext) as! Location
+        }
 
         location.locationDescription = descriptionTextView.text
         location.category = categoryName
