@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CD141A491BFC04770035879E /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD141A481BFC04770035879E /* LocationsViewController.swift */; };
+		CD141A4B1BFC0AC30035879E /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD141A4A1BFC0AC30035879E /* LocationCell.swift */; };
 		CD33F2E81BF255BA0024A55A /* CategoryPickerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33F2E71BF255BA0024A55A /* CategoryPickerTableViewController.swift */; };
 		CD33F2EA1BF635DC0024A55A /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33F2E91BF635DC0024A55A /* HudView.swift */; };
 		CD33F2EC1BF649D30024A55A /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33F2EB1BF649D30024A55A /* Functions.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		CD141A481BFC04770035879E /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
+		CD141A4A1BFC0AC30035879E /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		CD33F2E71BF255BA0024A55A /* CategoryPickerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPickerTableViewController.swift; sourceTree = "<group>"; };
 		CD33F2E91BF635DC0024A55A /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		CD33F2EB1BF649D30024A55A /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				CD9933AA1BF02A1300855A17 /* LocationDetailsViewController.swift */,
 				CD33F2E71BF255BA0024A55A /* CategoryPickerTableViewController.swift */,
 				CD141A481BFC04770035879E /* LocationsViewController.swift */,
+				CD141A4A1BFC0AC30035879E /* LocationCell.swift */,
 				CD33F2E91BF635DC0024A55A /* HudView.swift */,
 				CD386AAD1BF8027F00919BE7 /* DataModel.xcdatamodeld */,
 				CD91F8A51BDD9B0500B850A6 /* Main.storyboard */,
@@ -165,6 +168,7 @@
 				CD141A491BFC04770035879E /* LocationsViewController.swift in Sources */,
 				CD33F2EA1BF635DC0024A55A /* HudView.swift in Sources */,
 				CD33F2EC1BF649D30024A55A /* Functions.swift in Sources */,
+				CD141A4B1BFC0AC30035879E /* LocationCell.swift in Sources */,
 				CD386AB21BF91AC400919BE7 /* Location+CoreDataProperties.swift in Sources */,
 				CD91F8A01BDD9B0500B850A6 /* AppDelegate.swift in Sources */,
 				CD33F2E81BF255BA0024A55A /* CategoryPickerTableViewController.swift in Sources */,
