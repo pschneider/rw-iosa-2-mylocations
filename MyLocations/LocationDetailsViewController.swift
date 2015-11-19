@@ -50,7 +50,7 @@ class LocationDetailsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let location = locationToEdit {
+        if let _ = locationToEdit {
             title = "Edit Location"
         }
 
@@ -69,12 +69,13 @@ class LocationDetailsViewController: UITableViewController {
         dateLabel.text = formatDate(date)
 
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("hideKeyboard:"))
-        gestureRecognizer.cancelsTouchesInView = true
+        gestureRecognizer.cancelsTouchesInView = false
         tableView.addGestureRecognizer(gestureRecognizer)
     }
 
     // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+print("CATEGORY SEGUE!!!")
         if segue.identifier == "PickCategory" {
             let controller = segue.destinationViewController as! CategoryPickerViewController
             controller.selectedCategoryName = categoryName
@@ -148,11 +149,10 @@ class LocationDetailsViewController: UITableViewController {
 
         do {
             try managedObjectContext.save()
-            afterDelay(0.6) { self.dismissViewControllerAnimated(true, completion: nil) }
         } catch {
             fatalCoreDataError(error)
         }
-
+        afterDelay(0.6) { self.dismissViewControllerAnimated(true, completion: nil) }
     }
 
     @IBAction func cancel(sender: AnyObject) {
