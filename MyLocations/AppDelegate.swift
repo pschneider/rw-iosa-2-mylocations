@@ -83,6 +83,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let navigationController = tabBarViewControllers[1] as! UINavigationController
             let locationsViewController = navigationController.viewControllers.first! as! LocationsViewController
             locationsViewController.managedObjectContext = managedObjectContext
+            let _ = locationsViewController.view // fix core data bug when tagging a new location w/o opening locations tab first
+
         }
         listenForFatalCoreDataNotification()
         return true
