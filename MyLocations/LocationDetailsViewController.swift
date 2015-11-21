@@ -26,6 +26,8 @@ class LocationDetailsViewController: UITableViewController {
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var addPhotoLabel: UILabel!
 
     // MARK: Properties
     var coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
@@ -33,6 +35,17 @@ class LocationDetailsViewController: UITableViewController {
     var categoryName = "No Category"
     var date = NSDate()
     var descriptionText = ""
+    var image: UIImage? {
+        didSet {
+            if let image = image {
+                imageView.image = image
+                imageView.hidden = false
+                imageView.frame = CGRect(x: 10, y: 10, width: 260, height: 260)
+                addPhotoLabel.hidden = true
+            }
+        }
+    }
+
     var locationToEdit: Location? {
         didSet {
             if let location = locationToEdit {
@@ -160,14 +173,26 @@ class LocationDetailsViewController: UITableViewController {
 
     // MARK: Tableview Delegate
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.section == 0 && indexPath.row == 0 {
+
+        switch (indexPath.section, indexPath.row) {
+        case (0, 0):
             return 88
-        } else if indexPath.section == 2 && indexPath.row == 2 {
+        case (2, 2):
             addressLabel.frame.size = CGSize(width: view.bounds.size.width - 115, height: 10000)
             addressLabel.sizeToFit()
             addressLabel.frame.origin.x = view.bounds.size.width - addressLabel.frame.size.width - 15
             return addressLabel.frame.size.height + 20
-        } else {
+        case (1, _):
+            if imageView.hidden {
+                return 44
+            } else {
+                // image ratio
+                let ratio = image!.size.width / image!.size.height
+                // calculate new height
+                imageView.frame.size.height = imageView.frame.size.width / ratio
+                return imageView.frame.size.height + 20 // + margins
+            }
+        default:
             return 44
         }
     }
@@ -191,6 +216,7 @@ class LocationDetailsViewController: UITableViewController {
 }
 // MARK: UIImagePickerControllerDelegate, UINavigationControllerDelegate
 extension LocationDetailsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
     func pickPhoto() {
         if true || UIImagePickerController.isSourceTypeAvailable(.Camera) {
             showPhotoMenu()
@@ -234,6 +260,8 @@ extension LocationDetailsViewController: UIImagePickerControllerDelegate, UINavi
     }
 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        image = info[UIImagePickerControllerEditedImage] as? UIImage
+        tableView.reloadData()
         dismissViewControllerAnimated(true, completion: nil)
     }
 
