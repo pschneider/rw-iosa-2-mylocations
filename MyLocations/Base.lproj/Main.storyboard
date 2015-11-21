@@ -344,7 +344,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="BAu-R6-WTu" style="IBUITableViewCellStyleDefault" id="WBv-1K-3Hd">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WBv-1K-3Hd" id="yEu-8b-6w6">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -394,6 +394,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="3an-kD-Y97" kind="relationship" relationship="viewControllers" id="cXi-F6-EAf"/>
+                        <segue destination="B4U-a7-gpu" kind="relationship" relationship="viewControllers" id="plu-90-foi"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -472,6 +473,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTv-XG-IUH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="400" y="368"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="UJr-E1-OjQ">
+            <objects>
+                <viewController id="B4U-a7-gpu" customClass="MapViewController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wIF-Bx-gAa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="nMu-JB-UOL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <animations/>
+                                <connections>
+                                    <outlet property="delegate" destination="B4U-a7-gpu" id="g7J-iB-gPv"/>
+                                </connections>
+                            </mapView>
+                            <navigationBar contentMode="scaleToFill" id="6A4-Ue-mUJ">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Title" id="ykF-MT-uZd">
+                                        <barButtonItem key="leftBarButtonItem" title="Locations" id="Sc5-cq-7hg">
+                                            <connections>
+                                                <action selector="showLocations" destination="B4U-a7-gpu" id="CZq-AI-lBg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="User" id="d4D-OL-4MP">
+                                            <connections>
+                                                <action selector="showUser" destination="B4U-a7-gpu" id="gHw-P4-vJi"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" id="Ug2-mQ-ufK"/>
+                    <connections>
+                        <outlet property="mapView" destination="nMu-JB-UOL" id="xo8-oX-WtH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VnO-DD-uG0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="174" y="998"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Cig-Jz-PO0">

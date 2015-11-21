@@ -75,7 +75,6 @@ class LocationDetailsViewController: UITableViewController {
 
     // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-print("CATEGORY SEGUE!!!")
         if segue.identifier == "PickCategory" {
             let controller = segue.destinationViewController as! CategoryPickerViewController
             controller.selectedCategoryName = categoryName
