@@ -344,7 +344,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="BAu-R6-WTu" style="IBUITableViewCellStyleDefault" id="WBv-1K-3Hd">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WBv-1K-3Hd" id="yEu-8b-6w6">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -508,6 +508,9 @@
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="B4U-a7-gpu" id="SSv-vy-BqL"/>
+                                </connections>
                             </navigationBar>
                         </subviews>
                         <animations/>
@@ -516,6 +519,7 @@
                     <tabBarItem key="tabBarItem" title="Map" id="Ug2-mQ-ufK"/>
                     <connections>
                         <outlet property="mapView" destination="nMu-JB-UOL" id="xo8-oX-WtH"/>
+                        <segue destination="dSb-k1-gkf" kind="modal" identifier="EditLocation" id="rsz-MV-O93"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VnO-DD-uG0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -547,6 +551,6 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5oQ-JY-M5s"/>
+        <segue reference="rsz-MV-O93"/>
     </inferredMetricsTieBreakers>
 </document>
