@@ -87,7 +87,7 @@
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tag" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Tag" image="Tag" selectedImage="Tag" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="addressLabel" destination="MhI-LF-Wgd" id="ylA-Uu-g1a"/>
                         <outlet property="getButton" destination="kqj-pq-SpG" id="2Zm-Nf-3gn"/>
@@ -477,7 +477,7 @@
         <scene sceneID="AZY-PO-IiT">
             <objects>
                 <navigationController id="3an-kD-Y97" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Locations" id="G92-fI-ibA"/>
+                    <tabBarItem key="tabBarItem" title="Locations" image="Locations" id="G92-fI-ibA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ijk-We-of3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -533,7 +533,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="Ug2-mQ-ufK"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="Map" id="Ug2-mQ-ufK"/>
                     <connections>
                         <outlet property="mapView" destination="nMu-JB-UOL" id="xo8-oX-WtH"/>
                         <segue destination="dSb-k1-gkf" kind="modal" identifier="EditLocation" id="rsz-MV-O93"/>
@@ -565,10 +565,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="Locations" width="30" height="30"/>
+        <image name="Map" width="30" height="30"/>
+        <image name="Tag" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9nw-Wh-Egt"/>
+        <segue reference="rsz-MV-O93"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.93333333333333335" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
 </document>
