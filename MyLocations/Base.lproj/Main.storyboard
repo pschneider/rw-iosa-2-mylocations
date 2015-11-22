@@ -390,10 +390,10 @@
             </objects>
             <point key="canvasLocation" x="1948" y="85"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--My Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="MyTabBarController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="yIY-3v-uEd"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
@@ -543,10 +543,10 @@
             </objects>
             <point key="canvasLocation" x="174" y="998"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--My Navigation Controller-->
         <scene sceneID="Cig-Jz-PO0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dSb-k1-gkf" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dSb-k1-gkf" customClass="MyNavigationController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Rob-Nz-qqI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="E5z-R1-4bH">
