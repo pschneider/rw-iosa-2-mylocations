@@ -40,7 +40,9 @@ class LocationDetailsViewController: UITableViewController {
             if let image = image {
                 imageView.image = image
                 imageView.hidden = false
-                imageView.frame = CGRect(x: 10, y: 10, width: 260, height: 260)
+                // calculate height width / image ratio
+                let height = 260 / (image.size.width / image.size.height)
+                imageView.frame = CGRect(x: 10, y: 10, width: 260, height: height)
                 addPhotoLabel.hidden = true
             }
         }
@@ -186,10 +188,6 @@ class LocationDetailsViewController: UITableViewController {
             if imageView.hidden {
                 return 44
             } else {
-                // image ratio
-                let ratio = image!.size.width / image!.size.height
-                // calculate new height
-                imageView.frame.size.height = imageView.frame.size.width / ratio
                 return imageView.frame.size.height + 20 // + margins
             }
         default:
