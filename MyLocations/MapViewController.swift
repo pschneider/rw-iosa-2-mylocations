@@ -137,6 +137,8 @@ extension MapViewController: MKMapViewDelegate {
             let rightButton = UIButton(type: .DetailDisclosure)
             rightButton.addTarget(self, action: Selector("showLocationDetails:"), forControlEvents: .TouchUpInside)
             annotationView.rightCalloutAccessoryView = rightButton
+
+            annotationView.tintColor = UIColor(white: 0.0, alpha: 0.5)
         } else {
             annotationView.annotation = annotation
         }
