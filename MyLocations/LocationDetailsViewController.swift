@@ -60,10 +60,12 @@ class LocationDetailsViewController: UITableViewController {
         }
     }
     var managedObjectContext: NSManagedObjectContext!
+    var observer: AnyObject!
 
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        listenForBackgroundNotification()
 
         if let _ = locationToEdit {
             title = "Edit Location"
@@ -86,6 +88,11 @@ class LocationDetailsViewController: UITableViewController {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("hideKeyboard:"))
         gestureRecognizer.cancelsTouchesInView = false
         tableView.addGestureRecognizer(gestureRecognizer)
+    }
+
+    deinit {
+        print("*** deinit \(self)")
+        NSNotificationCenter.defaultCenter().removeObserver(observer)
     }
 
     // MARK: Navigation
@@ -140,6 +147,19 @@ class LocationDetailsViewController: UITableViewController {
     func formatDate(date: NSDate) -> String {
         return dateFormatter.stringFromDate(date)
     }
+
+    func listenForBackgroundNotification() {
+        observer = NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationDidEnterBackgroundNotification, object: nil, queue: NSOperationQueue.mainQueue()) { [weak self] _ in
+            // fix ownership cycle, self is now optional so unwrap first
+            if let strongSelf = self {
+                if let _ = strongSelf.presentedViewController {
+                    strongSelf.dismissViewControllerAnimated(false, completion: nil)
+                }
+                strongSelf.descriptionTextView.resignFirstResponder()
+            }
+        }
+    }
+
 
     // MARK: Action
     @IBAction func done(sender: AnyObject) {
