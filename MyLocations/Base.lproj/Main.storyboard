@@ -426,7 +426,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sDW-KS-I2D">
-                                            <rect key="frame" x="8" y="8" width="304" height="21"/>
+                                            <rect key="frame" x="82" y="8" width="238" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -434,13 +434,18 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qb3-ED-qdu">
-                                            <rect key="frame" x="8" y="27" width="304" height="21"/>
+                                            <rect key="frame" x="82" y="27" width="238" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="oE8-fC-PY8">
+                                            <rect key="frame" x="15" y="2" width="52" height="52"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                        </imageView>
                                     </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -448,6 +453,7 @@
                                 <connections>
                                     <outlet property="addressLabel" destination="Qb3-ED-qdu" id="3N8-rX-0c4"/>
                                     <outlet property="descriptionLabel" destination="sDW-KS-I2D" id="ris-wI-uHo"/>
+                                    <outlet property="photoImageView" destination="oE8-fC-PY8" id="eaK-7E-5nW"/>
                                     <segue destination="dSb-k1-gkf" kind="modal" identifier="EditLocation" id="5oQ-JY-M5s"/>
                                 </connections>
                             </tableViewCell>
@@ -558,6 +564,6 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rsz-MV-O93"/>
+        <segue reference="5oQ-JY-M5s"/>
     </inferredMetricsTieBreakers>
 </document>
