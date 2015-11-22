@@ -38,12 +38,7 @@ class LocationDetailsViewController: UITableViewController {
     var image: UIImage? {
         didSet {
             if let image = image {
-                imageView.image = image
-                imageView.hidden = false
-                // calculate height width / image ratio
-                let height = 260 / (image.size.width / image.size.height)
-                imageView.frame = CGRect(x: 10, y: 10, width: 260, height: height)
-                addPhotoLabel.hidden = true
+                showImage(image)
             }
         }
     }
@@ -67,8 +62,14 @@ class LocationDetailsViewController: UITableViewController {
         super.viewDidLoad()
         listenForBackgroundNotification()
 
-        if let _ = locationToEdit {
+        if let location = locationToEdit {
             title = "Edit Location"
+            if location.hasPhoto {
+                if let image = location.photoImage {
+                    // do not assign to image, so it's not written again if nothing changed
+                    showImage(image)
+                }
+            }
         }
 
         descriptionTextView.text = descriptionText
@@ -146,6 +147,15 @@ class LocationDetailsViewController: UITableViewController {
 
     func formatDate(date: NSDate) -> String {
         return dateFormatter.stringFromDate(date)
+    }
+
+    func showImage(image: UIImage) {
+        imageView.image = image
+        imageView.hidden = false
+        // calculate height width / image ratio
+        let height = 260 / (image.size.width / image.size.height)
+        imageView.frame = CGRect(x: 10, y: 10, width: 260, height: height)
+        addPhotoLabel.hidden = true
     }
 
     func listenForBackgroundNotification() {

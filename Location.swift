@@ -27,6 +27,19 @@ class Location: NSManagedObject, MKAnnotation {
         return UIImage(contentsOfFile: photoPath)
     }
 
+    func removePhotoFile() {
+        if hasPhoto {
+            let fileManager = NSFileManager.defaultManager()
+            if fileManager.fileExistsAtPath(photoPath) {
+                do {
+                    try fileManager.removeItemAtPath(photoPath)
+                } catch {
+                    print("Error removing file: \(error)")
+                }
+            }
+        }
+    }
+
     class func nextPhotoID() -> Int {
         // @TODO try to implement this via core data
         let userDefaults = NSUserDefaults.standardUserDefaults()
