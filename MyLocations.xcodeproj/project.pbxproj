@@ -88,12 +88,12 @@
 				CD141A4A1BFC0AC30035879E /* LocationCell.swift */,
 				CD33F2E91BF635DC0024A55A /* HudView.swift */,
 				CD155C801BFFE3F90072F191 /* MapViewController.swift */,
+				CD33F2EB1BF649D30024A55A /* Functions.swift */,
 				CD386AAD1BF8027F00919BE7 /* DataModel.xcdatamodeld */,
 				CD91F8A51BDD9B0500B850A6 /* Main.storyboard */,
 				CD91F8A81BDD9B0500B850A6 /* Assets.xcassets */,
 				CD91F8AA1BDD9B0500B850A6 /* LaunchScreen.storyboard */,
 				CD91F8AD1BDD9B0500B850A6 /* Info.plist */,
-				CD33F2EB1BF649D30024A55A /* Functions.swift */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
