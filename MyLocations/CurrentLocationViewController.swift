@@ -101,9 +101,6 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         logoRotator.toValue = -2 * M_PI
         logoRotator.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
         logoButton.layer.addAnimation(logoRotator, forKey: "logoRotator")
-
-
-        logoButton.removeFromSuperview()
     }
 
     override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
