@@ -27,7 +27,6 @@
 		CD91F8A21BDD9B0500B850A6 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD91F8A11BDD9B0500B850A6 /* CurrentLocationViewController.swift */; };
 		CD91F8A71BDD9B0500B850A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD91F8A51BDD9B0500B850A6 /* Main.storyboard */; };
 		CD91F8A91BDD9B0500B850A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD91F8A81BDD9B0500B850A6 /* Assets.xcassets */; };
-		CD91F8AC1BDD9B0500B850A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD91F8AA1BDD9B0500B850A6 /* LaunchScreen.storyboard */; };
 		CD9933AB1BF02A1300855A17 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9933AA1BF02A1300855A17 /* LocationDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +52,6 @@
 		CD91F8A11BDD9B0500B850A6 /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
 		CD91F8A61BDD9B0500B850A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD91F8A81BDD9B0500B850A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CD91F8AB1BDD9B0500B850A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD91F8AD1BDD9B0500B850A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD9933AA1BF02A1300855A17 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,7 +113,6 @@
 				CD386AAD1BF8027F00919BE7 /* DataModel.xcdatamodeld */,
 				CD91F8A51BDD9B0500B850A6 /* Main.storyboard */,
 				CD91F8A81BDD9B0500B850A6 /* Assets.xcassets */,
-				CD91F8AA1BDD9B0500B850A6 /* LaunchScreen.storyboard */,
 				CD91F8AD1BDD9B0500B850A6 /* Info.plist */,
 				CD155C861C027BD00072F191 /* MyTabBarController.swift */,
 				CD155C8A1C027D210072F191 /* MyImagePickerController.swift */,
@@ -182,7 +179,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD91F8AC1BDD9B0500B850A6 /* LaunchScreen.storyboard in Resources */,
 				CD91F8A91BDD9B0500B850A6 /* Assets.xcassets in Resources */,
 				CD6A6A221C067D6800894FC8 /* Sound.caf in Resources */,
 				CD91F8A71BDD9B0500B850A6 /* Main.storyboard in Resources */,
@@ -225,14 +221,6 @@
 				CD91F8A61BDD9B0500B850A6 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CD91F8AA1BDD9B0500B850A6 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CD91F8AB1BDD9B0500B850A6 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -323,6 +311,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = MyLocations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.patrickschneider.MyLocations;
@@ -334,6 +323,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = MyLocations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.patrickschneider.MyLocations;
